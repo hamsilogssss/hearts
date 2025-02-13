@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Envelope</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            overflow-y: auto;
+            flex-direction: column;
+        }
+        .container {
+            position: relative;
+            width: 250px;
+            height: 200px;
+        }
+        .envelope {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ff4d4d;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            border: 3px solid #ff9999;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .envelope:hover {
+            transform: scale(1.05);
+        }
+        .flap {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 50%;
+            background: #ff6666;
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+            transition: transform 0.5s ease-in-out;
+        }
+        .container.open .flap {
+            transform: rotateX(180deg);
+        }
+        .hearts {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #ff4d4d;
+            animation: float 1.5s infinite alternate ease-in-out;
+        }
+        @keyframes float {
+            from { transform: translateX(-50%) translateY(0); }
+            to { transform: translateX(-50%) translateY(-10px); }
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fffaf0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 300px;
+            font-family: 'Georgia', serif;
+            font-size: 14px;
+            line-height: 1.5;
+            border: 2px solid #d6336c;
+            padding: 20px;
+        }
+        .popup h2 {
+            text-align: center;
+            color: #d6336c;
+            font-size: 18px;
+        }
+        .popup img {
+            display: block;
+            margin: 0 auto 10px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .popup button {
+            display: block;
+            margin: 10px auto 0;
+            padding: 10px;
+            border: none;
+            background: #ff4d4d;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .popup button:hover {
+            background: #d6336c;
+        }
+        h1 {
+            text-align: center;
+            color: #ff69b4;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>CLICK THE ENVELOPE</h1>
+    <div class="container" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="flap"></div>
+        </div>
+        <div class="hearts">❤️ ❤️ ❤️</div>
+    </div>
+
+    <div class="popup" id="popup">
+        <img src="image.png" alt="Valentine Dog">
+        <h2>Dear my baby,</h2>
+        <p>Hi, baby! Happy Hearts Day! 💖 I hope you liked the flowers. Honestly, I wasn’t really planning on giving you any or even visiting, especially since you said your mom might get mad. So, I decided not to make any plans. But then, I suddenly saw those pink tulips, and they reminded me of you—so cute! I just couldn’t resist. HAHAHAHA.</p>
+        <p>I know you’re super busy right now. You don’t always say it, but I can tell you’re really tired from all your schoolwork. Always remember that I’m here for you, no matter what. Aw hauh. I’ll support you in everything you do and everything you’re working hard for. I’m so, so proud of you—always! You’re doing amazing, and I hope you take care of yourself too, okay? Don’t overwork yourself too much, my love.</p>
+        <p>Again, happy Hearts Day, my baby! I love you so much. Thank you for always being you, for making me happy, and for allowing me to love you. You mean so much to me. Let’s go on a date when you're not too busy—I can’t wait to spend time with you!</p>
+        <p>I love you endlessly, always and forever. 💕</p>
+        <p>—aw ❤️</p>
+        <button onclick="closePopup()">iloveyou</button>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            document.getElementById('popup').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
