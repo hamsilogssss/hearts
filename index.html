@@ -9,11 +9,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #ffe6e6;
             overflow-y: auto;
             flex-direction: column;
+            scrollbar-width: none; /* Hides scrollbar in Firefox */
         }
+        /* Hides scrollbar for Chrome, Safari, Edge */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
         .container {
             position: relative;
             width: 250px;
