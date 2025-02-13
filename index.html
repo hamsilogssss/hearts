@@ -9,11 +9,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #ffe6e6;
             overflow-y: auto;
             flex-direction: column;
+            scrollbar-width: none;
         }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
         .container {
             position: relative;
             width: 250px;
@@ -124,10 +129,9 @@
     <div class="popup" id="popup">
         <img src="image.png" alt="Valentine Dog">
         <h2>Dear my baby,</h2>
-        <p>Hi, baby! Happy Hearts Day! 💖 I hope you liked the flowers. Honestly, I wasn’t really planning on giving you any or even visiting, especially since you said your mom might get mad. So, I decided not to make any plans. But then, I suddenly saw those pink tulips, and they reminded me of you—so cute! I just couldn’t resist. HAHAHAHA.</p>
-        <p>I know you’re super busy right now. You don’t always say it, but I can tell you’re really tired from all your schoolwork. Always remember that I’m here for you, no matter what. Aw hauh. I’ll support you in everything you do and everything you’re working hard for. I’m so, so proud of you—always! You’re doing amazing, and I hope you take care of yourself too, okay? Don’t overwork yourself too much, my love.</p>
-        <p>Again, happy Hearts Day, my baby! I love you so much. Thank you for always being you, for making me happy, and for allowing me to love you. You mean so much to me. Let’s go on a date when you're not too busy—I can’t wait to spend time with you!</p>
-        <p>I love you endlessly, always and forever. 💕</p>
+        <p>Hi, baby! Happy Hearts Day! 💖 I hope you liked the flowers. I honestly wasn’t planning to give or visit since you said your mom might get mad. But then I saw those pink tulips, and they reminded me of you—so cute! HAHAHA.</p>
+        <p>I know you’re super busy and tired with school, even if you don’t say it. But always remember, I’m here for you. I’ll support you no matter what, and I’m so, so proud of you! Please take care of yourself, okay?</p>
+        <p>Again, happy Hearts Day, my baby! I love you so much. Can’t wait to go on a date when you're free! 💕</p>
         <p>—aw ❤️</p>
         <button onclick="closePopup()">iloveyou</button>
     </div>
